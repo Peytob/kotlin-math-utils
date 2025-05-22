@@ -313,7 +313,7 @@ operator fun Vec2i.times(right: Float): Vec2i {
 
 @JvmName("dotVec2iVec2d")
 fun Vec2i.dot(rx: Double, ry: Double): Int {
-    return (this.x * rx + y * ry).toInt()
+    return (this.x * rx + this.y * ry).toInt()
 }
 
 @JvmName("dotVec2iVec2d")
@@ -328,7 +328,7 @@ fun Vec2i.dot(right: Double): Int {
 
 @JvmName("dotVec2iVec2l")
 fun Vec2i.dot(rx: Long, ry: Long): Int {
-    return (this.x * rx + y * ry).toInt()
+    return (this.x * rx + this.y * ry).toInt()
 }
 
 @JvmName("dotVec2iVec2l")
@@ -343,7 +343,7 @@ fun Vec2i.dot(right: Long): Int {
 
 @JvmName("dotVec2iVec2i")
 fun Vec2i.dot(rx: Int, ry: Int): Int {
-    return this.x * rx + y * ry
+    return this.x * rx + this.y * ry
 }
 
 @JvmName("dotVec2iVec2i")
@@ -358,7 +358,7 @@ fun Vec2i.dot(right: Int): Int {
 
 @JvmName("dotVec2iVec2f")
 fun Vec2i.dot(rx: Float, ry: Float): Int {
-    return (this.x * rx + y * ry).toInt()
+    return (this.x * rx + this.y * ry).toInt()
 }
 
 @JvmName("dotVec2iVec2f")

@@ -31,9 +31,6 @@ interface MutVec3<T : Number> : Vec3<T> {
 }
 
 typealias MutVec3d = MutVec3<Double>
-
 typealias MutVec3l = MutVec3<Long>
-
 typealias MutVec3i = MutVec3<Int>
-
 typealias MutVec3f = MutVec3<Float>

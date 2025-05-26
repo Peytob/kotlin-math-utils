@@ -21,9 +21,6 @@ interface Vec2<T : Number> : Vec<T> {
 }
 
 typealias Vec2d = Vec2<Double>
-
 typealias Vec2l = Vec2<Long>
-
 typealias Vec2i = Vec2<Int>
-
 typealias Vec2f = Vec2<Float>

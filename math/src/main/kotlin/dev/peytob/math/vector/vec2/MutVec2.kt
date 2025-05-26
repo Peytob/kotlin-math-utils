@@ -27,9 +27,6 @@ interface MutVec2<T : Number> : Vec2<T> {
 }
 
 typealias MutVec2d = MutVec2<Double>
-
 typealias MutVec2l = MutVec2<Long>
-
 typealias MutVec2i = MutVec2<Int>
-
 typealias MutVec2f = MutVec2<Float>

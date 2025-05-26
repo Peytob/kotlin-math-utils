@@ -10,4 +10,6 @@ data class StructVec2f(
 
     override val vectorSizeBytes: Int
         get() = Float.SIZE_BYTES * size
+
+    override fun toString(): String = "vec2f(x=$x, y=$y)"
 }

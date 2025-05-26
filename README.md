@@ -13,6 +13,7 @@
 Поддерживаемые виды векторов:
 
 + Двухкомпонентные вектора вида (x, y)
++ Трехкомпонентные вектора вида (x, y, z)
 
 Поддерживаемые типы данных векторов:
 
@@ -25,6 +26,7 @@
 
 + Базовые арифметические операции вектор - вектор (сложение (+), вычитание (-), векторное (*) и скалярное (dot) произведение)
 + Базовые арифметические операции вектор - скаляр (сложение (+), вычитание (-), векторное (*) произведение)
++ Упаковка вектора в любой из типов Java NIO Buffer
 
 На данный момент поддерживается только организация векторов в памяти только подходом AoS. В будущем планируется поддержка подхода SoA.
 
@@ -43,11 +45,28 @@
 Рассмотрим приведение примитивов векторов при сложении. Аналогично для любых других операций.
 
 ```kotlin
-val a: Vec3f = immutableVec3f(1.1f, 4.2f)
-val b: Vec3i = immutableVec3i(2, 5)
+val a: Vec2f = immutableVec2f(1.1f, 4.2f)
+val b: Vec2i = immutableVec2i(2, 5)
 
-val apb: Vec3f = a + b // (3.1f, 9.2f)
-val bpa: Vec3i = b + a // (3, 9)
+val apb: Vec2f = a + b // (3.1f, 9.2f)
+val bpa: Vec2i = b + a // (3, 9)
+```
+
+В случае, если операция определена для двух векторов, может быть реализована flat-версия операции, принимающая раскрытый вектор. Результаты операций должны быть одинаковы и flat-операции используются для более гибкого API, которое может иногда позволить сэкономить на создании объектов векторов:
+
+```kotlin
+val a: Vec2f = immutableVec2f(1.5f, 2.0f)
+val b: Vec2f = immutableVec2f(5.0, 2.0)
+
+val sumVectorized: Vec2f = a + b // also can be used as function: a.plus(b)
+val sumFlat: Vec2f = a.plus(rx = b.x, ry = b.y)
+
+assert(sumVectorized == sumFlat)
+
+val distanceVectorized: Vec2f = distance(a, b)
+val distanceFlat: Vec2f = distance(lx = a.x, ly = a.y, rx = b.x, ry = b.y)
+
+assert(distanceVectorized == distanceFlat)
 ```
 
 ### Demo

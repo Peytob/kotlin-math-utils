@@ -11,4 +11,6 @@ data class StructMutVec3f(
 
     override val vectorSizeBytes: Int
         get() = Float.SIZE_BYTES * size
+
+    override fun toString(): String = "mvec3f(x=$x, y=$y, z=$z)"
 }

@@ -11,4 +11,6 @@ data class StructVec3i(
 
     override val vectorSizeBytes: Int
         get() = Int.SIZE_BYTES * size
+
+    override fun toString(): String = "vec3i(x=$x, y=$y, z=$z)"
 }

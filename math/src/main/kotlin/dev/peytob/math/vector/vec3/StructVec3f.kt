@@ -11,4 +11,6 @@ data class StructVec3f(
 
     override val vectorSizeBytes: Int
         get() = Float.SIZE_BYTES * size
+
+    override fun toString(): String = "vec3f(x=$x, y=$y, z=$z)"
 }

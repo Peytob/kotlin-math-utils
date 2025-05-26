@@ -10,4 +10,6 @@ data class StructVec2i(
 
     override val vectorSizeBytes: Int
         get() = Int.SIZE_BYTES * size
+
+    override fun toString(): String = "vec2i(x=$x, y=$y)"
 }

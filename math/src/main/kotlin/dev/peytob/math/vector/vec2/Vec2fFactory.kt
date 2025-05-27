@@ -55,6 +55,10 @@ fun immutableVec2f(x: Int, y: Int): Vec2f {
 
 @JvmName(name = "immutableVec2ff")
 fun immutableVec2f(right: Vec2f): Vec2f {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec2f(
         x = right.x,
         y = right.y

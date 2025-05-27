@@ -11,6 +11,9 @@ interface MutVec3<T : Number> : Vec3<T> {
 
     override var z: T
 
+    override val mutable: Boolean
+        get() = true
+
     override operator fun `get`(index: Int): T {
         return when (index) {
             0 -> x

@@ -13,6 +13,9 @@ interface Vec3<T : Number> : Vec<T> {
 
     val z: T
 
+    override val mutable: Boolean
+        get() = false
+
     override operator fun `get`(index: Int): T {
         return when (index) {
             0 -> x

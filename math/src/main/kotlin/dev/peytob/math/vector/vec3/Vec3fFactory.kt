@@ -61,6 +61,10 @@ fun immutableVec3f(x: Int, y: Int, z: Int): Vec3f {
 
 @JvmName(name = "immutableVec3ff")
 fun immutableVec3f(right: Vec3f): Vec3f {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec3f(
         x = right.x,
         y = right.y,

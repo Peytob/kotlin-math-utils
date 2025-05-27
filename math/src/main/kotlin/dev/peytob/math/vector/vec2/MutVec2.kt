@@ -9,6 +9,9 @@ interface MutVec2<T : Number> : Vec2<T> {
 
     override var y: T
 
+    override val mutable: Boolean
+        get() = true
+
     override operator fun `get`(index: Int): T {
         return when (index) {
             0 -> x

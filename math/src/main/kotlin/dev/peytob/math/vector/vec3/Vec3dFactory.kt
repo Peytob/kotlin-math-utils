@@ -7,6 +7,10 @@ fun immutableVec3d(): Vec3d = ZERO
 
 @JvmName(name = "immutableVec3dd")
 fun immutableVec3d(right: Vec3d): Vec3d {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec3d(
         x = right.x,
         y = right.y,

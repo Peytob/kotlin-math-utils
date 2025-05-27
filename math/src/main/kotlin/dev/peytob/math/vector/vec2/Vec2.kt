@@ -11,6 +11,9 @@ interface Vec2<T : Number> : Vec<T> {
 
     val y: T
 
+    override val mutable: Boolean
+        get() = false
+
     override operator fun `get`(index: Int): T {
         return when (index) {
             0 -> x

@@ -25,6 +25,10 @@ fun immutableVec3l(x: Double, y: Double, z: Double): Vec3l {
 
 @JvmName(name = "immutableVec3ll")
 fun immutableVec3l(right: Vec3l): Vec3l {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec3l(
         x = right.x,
         y = right.y,

@@ -8,7 +8,7 @@ import dev.peytob.math.vector.vec2.times
 import kotlin.math.floor
 import kotlin.math.tan
 
-class GoldNoise(
+class GoldNoise2D(
     private val seed: Int
 ) : Noise2D {
 

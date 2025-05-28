@@ -9,6 +9,9 @@ interface MutVec2<T : Number> : Vec2<T> {
 
     override var y: T
 
+    override val mutable: Boolean
+        get() = true
+
     override operator fun `get`(index: Int): T {
         return when (index) {
             0 -> x
@@ -27,9 +30,6 @@ interface MutVec2<T : Number> : Vec2<T> {
 }
 
 typealias MutVec2d = MutVec2<Double>
-
 typealias MutVec2l = MutVec2<Long>
-
 typealias MutVec2i = MutVec2<Int>
-
 typealias MutVec2f = MutVec2<Float>

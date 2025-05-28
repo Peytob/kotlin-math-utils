@@ -39,6 +39,10 @@ fun immutableVec2i(x: Long, y: Long): Vec2i {
 
 @JvmName(name = "immutableVec2ii")
 fun immutableVec2i(right: Vec2i): Vec2i {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec2i(
         x = right.x,
         y = right.y

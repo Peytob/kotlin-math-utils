@@ -8,5 +8,7 @@ interface Vec<T : Number> {
 
     val size: Int
 
+    val mutable: Boolean
+
     operator fun `get`(index: Int): T
 }

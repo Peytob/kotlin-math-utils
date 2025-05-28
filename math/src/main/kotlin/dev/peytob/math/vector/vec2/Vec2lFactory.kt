@@ -23,6 +23,10 @@ fun immutableVec2l(x: Double, y: Double): Vec2l {
 
 @JvmName(name = "immutableVec2ll")
 fun immutableVec2l(right: Vec2l): Vec2l {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec2l(
         x = right.x,
         y = right.y

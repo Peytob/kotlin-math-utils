@@ -7,6 +7,10 @@ fun immutableVec2d(): Vec2d = ZERO
 
 @JvmName(name = "immutableVec2dd")
 fun immutableVec2d(right: Vec2d): Vec2d {
+    if (!right.mutable) {
+        return right
+    }
+
     return StructVec2d(
         x = right.x,
         y = right.y

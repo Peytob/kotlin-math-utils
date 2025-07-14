@@ -13,12 +13,14 @@ class GoldNoise2D(
 ) : Noise2D {
 
     override fun getPoint(point: Vec2f): Float {
-        val dist = distance(point, point * PHI)
-        val tan = tan(dist) * seed * point.x
-        return tan - floor(tan)
+        return fract(tan(distance(point*PHI, point)*seed)*point.x)
     }
 
     override fun getPoint(x: Float, y: Float): Float {
         return getPoint(immutableVec2f(x, y))
+    }
+
+    private fun fract(x: Float): Float {
+        return x - floor(x)
     }
 }

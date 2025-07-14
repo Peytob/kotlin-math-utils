@@ -4,15 +4,14 @@ plugins {
 }
 
 group = "dev.peytob.math"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation(project(":math"))
-    implementation(project(":random"))
+    implementation(project(mapOf("path" to ":")))
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
